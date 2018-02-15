@@ -1,0 +1,349 @@
+{
+  "wizard_id": 3774351,
+  "timestamp": 1518125995,
+  "action": "equip_rune_list",
+  "type": "raw",
+  "equip_rune_id_list": [
+    9521241210,
+    9509258073,
+    7827162891,
+    6710625838
+  ],
+  "unequip_rune_id_list": [
+    9509258073,
+    6710625838
+  ],
+  "unit_info": {
+    "unit_id": 5387718837,
+    "wizard_id": 3774351,
+    "island_id": 2,
+    "pos_x": 22,
+    "pos_y": 17,
+    "building_id": 0,
+    "unit_master_id": 18312,
+    "unit_level": 35,
+    "class": 5,
+    "con": 468,
+    "atk": 565,
+    "def": 420,
+    "spd": 101,
+    "resist": 15,
+    "accuracy": 0,
+    "critical_rate": 15,
+    "critical_damage": 50,
+    "experience": 446647,
+    "exp_gained": 0,
+    "exp_gain_rate": 0,
+    "skills": [
+      [
+        9102,
+        1
+      ],
+      [
+        9116,
+        1
+      ],
+      [
+        9112,
+        1
+      ]
+    ],
+    "runes": [
+      {
+        "rune_id": 9903034315,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 6,
+        "rank": 4,
+        "class": 6,
+        "set_id": 13,
+        "upgrade_limit": 15,
+        "upgrade_curr": 9,
+        "base_value": 538900,
+        "sell_value": 26945,
+        "pri_eff": [
+          4,
+          38
+        ],
+        "prefix_eff": [
+          5,
+          16
+        ],
+        "sec_eff": [
+          [
+            8,
+            10,
+            0,
+            0
+          ],
+          [
+            10,
+            11,
+            0,
+            0
+          ],
+          [
+            6,
+            8,
+            0,
+            0
+          ]
+        ],
+        "extra": 3
+      },
+      {
+        "rune_id": 6907919087,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 2,
+        "rank": 5,
+        "class": 5,
+        "set_id": 13,
+        "upgrade_limit": 15,
+        "upgrade_curr": 15,
+        "base_value": 367200,
+        "sell_value": 20400,
+        "pri_eff": [
+          8,
+          39
+        ],
+        "prefix_eff": [
+          11,
+          7
+        ],
+        "sec_eff": [
+          [
+            6,
+            11,
+            0,
+            0
+          ],
+          [
+            2,
+            11,
+            0,
+            0
+          ],
+          [
+            1,
+            328,
+            0,
+            0
+          ],
+          [
+            4,
+            5,
+            0,
+            0
+          ]
+        ],
+        "extra": 4
+      },
+      {
+        "rune_id": 9521241210,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 1,
+        "rank": 5,
+        "class": 6,
+        "set_id": 19,
+        "upgrade_limit": 15,
+        "upgrade_curr": 12,
+        "base_value": 602300,
+        "sell_value": 30115,
+        "pri_eff": [
+          3,
+          118
+        ],
+        "prefix_eff": [
+          0,
+          0
+        ],
+        "sec_eff": [
+          [
+            1,
+            652,
+            0,
+            0
+          ],
+          [
+            4,
+            8,
+            0,
+            0
+          ],
+          [
+            8,
+            17,
+            0,
+            0
+          ],
+          [
+            9,
+            6,
+            0,
+            0
+          ]
+        ],
+        "extra": 5
+      },
+      {
+        "rune_id": 9509258073,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 3,
+        "rank": 5,
+        "class": 6,
+        "set_id": 13,
+        "upgrade_limit": 15,
+        "upgrade_curr": 12,
+        "base_value": 523050,
+        "sell_value": 26152,
+        "pri_eff": [
+          5,
+          118
+        ],
+        "prefix_eff": [
+          0,
+          0
+        ],
+        "sec_eff": [
+          [
+            6,
+            12,
+            0,
+            0
+          ],
+          [
+            11,
+            16,
+            0,
+            0
+          ],
+          [
+            8,
+            12,
+            0,
+            0
+          ],
+          [
+            1,
+            322,
+            0,
+            262
+          ]
+        ],
+        "extra": 5
+      },
+      {
+        "rune_id": 7827162891,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 4,
+        "rank": 5,
+        "class": 6,
+        "set_id": 10,
+        "upgrade_limit": 15,
+        "upgrade_curr": 12,
+        "base_value": 627660,
+        "sell_value": 31383,
+        "pri_eff": [
+          4,
+          47
+        ],
+        "prefix_eff": [
+          0,
+          0
+        ],
+        "sec_eff": [
+          [
+            8,
+            16,
+            0,
+            0
+          ],
+          [
+            10,
+            7,
+            0,
+            0
+          ],
+          [
+            2,
+            8,
+            0,
+            0
+          ],
+          [
+            5,
+            15,
+            0,
+            0
+          ]
+        ],
+        "extra": 3
+      },
+      {
+        "rune_id": 6710625838,
+        "wizard_id": 3774351,
+        "occupied_type": 1,
+        "occupied_id": 5387718837,
+        "slot_no": 5,
+        "rank": 5,
+        "class": 6,
+        "set_id": 13,
+        "upgrade_limit": 15,
+        "upgrade_curr": 12,
+        "base_value": 608640,
+        "sell_value": 30432,
+        "pri_eff": [
+          1,
+          1800
+        ],
+        "prefix_eff": [
+          12,
+          5
+        ],
+        "sec_eff": [
+          [
+            4,
+            14,
+            0,
+            4
+          ],
+          [
+            8,
+            9,
+            0,
+            2
+          ],
+          [
+            9,
+            9,
+            0,
+            0
+          ],
+          [
+            2,
+            8,
+            0,
+            4
+          ]
+        ],
+        "extra": 4
+      }
+    ],
+    "costume_master_id": 0,
+    "trans_items": [],
+    "attribute": 2,
+    "create_time": "2018-01-16 07:03:16",
+    "source": 0,
+    "homunculus": 0,
+    "homunculus_name": ""
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "wizard_id": 3774351,
+  "timestamp": 1518204976,
+  "action": "amplify_rune",
+  "type": "raw",
+  "rune_id": 8206060404,
+  "craft_id": 52456088,
+  "rune": {
+    "rune_id": 8206060404,
+    "wizard_id": 3774351,
+    "occupied_type": 1,
+    "occupied_id": 4700421914,
+    "slot_no": 4,
+    "rank": 5,
+    "class": 6,
+    "set_id": 7,
+    "upgrade_limit": 15,
+    "upgrade_curr": 15,
+    "base_value": 399420,
+    "sell_value": 19971,
+    "pri_eff": [
+      9,
+      58
+    ],
+    "prefix_eff": [
+      0,
+      0
+    ],
+    "sec_eff": [
+      [
+        3,
+        19,
+        0,
+        0
+      ],
+      [
+        10,
+        5,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        1,
+        3
+      ],
+      [
+        4,
+        35,
+        0,
+        7
+      ]
+    ],
+    "extra": 5
+  }
+}

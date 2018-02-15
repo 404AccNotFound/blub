@@ -3,18 +3,24 @@ package bla;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 public class Core {
+	
+	public static String directory = "files";
 
 	public static void main(String[] args) throws IOException {
-		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File("C:\\Users\\Nico\\Desktop\\Summoners War Exporter Files\\live\\3774351-live-1518209630.json"))));
-		JSONObject runeObject = object.getJSONObject("rune");
-		for(String s : runeObject.keySet()) {
-			System.out.println(s);
+		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File("files\\3774351-live-1518209630.json"))));
+		if(object.get("action").equals("new_rune")) {
+			JSONObject runeObject = object.getJSONObject("rune");
+			Rune rune = new Rune(runeObject);
 		}
 		
     	HashMap<String, String> runeMap = new HashMap<String, String>();
@@ -100,5 +106,13 @@ public class Core {
 			}
 		}
 		return false;
+	}
+	
+	public void watchOutForNewFile () throws IOException {
+		try (Stream<Path> paths = Files.walk(Paths.get(Core.directory))) {
+		    paths
+		        .filter(Files::isRegularFile)
+		        .forEach(System.out::println);
+		} 
 	}
 }

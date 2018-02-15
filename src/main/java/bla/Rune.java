@@ -2,6 +2,8 @@ package bla;
 
 import java.util.HashMap;
 
+import org.json.JSONObject;
+
 public class Rune {
 
 	public static String speedKey = "spd";
@@ -31,6 +33,10 @@ public class Rune {
 		this.stars = stars;
 		this.rarity = rarity;
 		this.stats = stats;
+	}
+
+	public Rune(JSONObject runeObject) {
+		//TODO: construct Rune from JsonObject
 	}
 
 	public int getStars() {
