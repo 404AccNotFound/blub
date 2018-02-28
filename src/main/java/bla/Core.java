@@ -1,36 +1,63 @@
 package bla;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.stream.Stream;
-
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
 public class Core {
 	
-	public static String directory = "files";
+	public static String directory = "files\\liveJson";
 
+	/*actions:
+	 * 	unequip_rune
+		equip_rune_list
+		new_rune
+		sell_rune
+		upgrade_rune
+		amplify_rune
+		equip_rune
+		sell_craft
+	 */
+	
 	public static void main(String[] args) throws IOException {
-		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File("files\\3774351-live-1518209630.json"))));
-		if(object.get("action").equals("new_rune")) {
-			JSONObject runeObject = object.getJSONObject("rune");
-			Rune rune = new Rune(runeObject);
-		}
 		
-    	HashMap<String, String> runeMap = new HashMap<String, String>();
-    	runeMap.put(Rune.critRateKey, "5");
-    	runeMap.put(Rune.critDmgKey, "6");
-    	runeMap.put(Rune.hpFlatKey, "20");
-		Rune rune = new Rune(1, 6, Rune.legendaryRarity, runeMap);
-		RuneKeepOptionData.init();
-		Core core = new Core();
-		System.out.println(core.keepOrNotToKeep(rune));
+		RuneInfo.init();
+//		
+//		Core core = new Core();
+//		ArrayList<String> list = core.watchOutForNewFile();
+//		ArrayList<String> listSingleton = new ArrayList<String>();
+//		for(String s : list) {
+//			JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File(s))));
+//			if(!listSingleton.contains(object.get("action"))) {
+//				listSingleton.add((String) object.get("action"));
+//			}
+//			if(object.has("rune")) {
+//				JSONObject runeObject = object.getJSONObject("rune");
+//				System.out.println(runeObject.get("rank"));
+//			}
+//		}
+//		
+//		for(String s : listSingleton) {
+//			System.out.println(s);
+//		}
+		
+//		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File("files\\3774351-live-1518209630.json"))));
+//		if(object.get("action").equals("new_rune")) {
+//			JSONObject runeObject = object.getJSONObject("rune");
+//			Rune rune = new Rune(runeObject);
+//		}
+//		
+//    	HashMap<String, String> runeMap = new HashMap<String, String>();
+//    	runeMap.put(Rune.critRateKey, "5");
+//    	runeMap.put(Rune.critDmgKey, "6");
+//    	runeMap.put(Rune.hpFlatKey, "20");
+//		Rune rune = new Rune(1, 6, Rune.legendaryRarity, runeMap);
+//		RuneKeepOptionData.init();
+//		Core core = new Core();
+//		System.out.println(core.keepOrNotToKeep(rune));
 	}	
 	
 //	public static void main(String[] args) {
@@ -93,7 +120,7 @@ public class Core {
 				//checking throug stats
 				for (String runeStat : rune.getStats().keySet()) {
 					for (String optionStat : option.getOptions().keySet()) {
-						if ((runeStat.equals(optionStat) || optionStat.equals(Rune.fillerKey)) && !option.getOptions().get(optionStat)) {
+						if ((runeStat.equals(optionStat) || optionStat.equals(RuneInfo.fillerKey)) && !option.getOptions().get(optionStat)) {
 							counter++;
 							option.getOptions().put(optionStat, true);
 							break;
@@ -108,11 +135,13 @@ public class Core {
 		return false;
 	}
 	
-	public void watchOutForNewFile () throws IOException {
+	public ArrayList<String> watchOutForNewFile () throws IOException {
+		ArrayList<String> list = new ArrayList<String>();
 		try (Stream<Path> paths = Files.walk(Paths.get(Core.directory))) {
 		    paths
 		        .filter(Files::isRegularFile)
-		        .forEach(System.out::println);
+		        .forEach(item->list.add(item.toString()));
 		} 
+		return list;
 	}
 }

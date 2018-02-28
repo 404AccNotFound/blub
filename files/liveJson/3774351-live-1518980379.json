@@ -1,0 +1,39 @@
+{
+  "wizard_id": 3774351,
+  "timestamp": 1518980379,
+  "action": "new_rune",
+  "type": "raw",
+  "rune": {
+    "rune_id": 10286557079,
+    "wizard_id": 3774351,
+    "occupied_type": 2,
+    "occupied_id": 0,
+    "slot_no": 1,
+    "rank": 3,
+    "class": 6,
+    "set_id": 7,
+    "upgrade_limit": 15,
+    "upgrade_curr": 0,
+    "base_value": 240920,
+    "sell_value": 12046,
+    "pri_eff": [
+      3,
+      22
+    ],
+    "prefix_eff": [
+      0,
+      0
+    ],
+    "sec_eff": [
+      [
+        4,
+        5
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    "extra": 3
+  }
+}

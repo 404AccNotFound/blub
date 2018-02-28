@@ -5,27 +5,11 @@ import java.util.HashMap;
 import org.json.JSONObject;
 
 public class Rune {
-
-	public static String speedKey = "spd";
-	public static String hpPercKey = "hpPerc";
-	public static String hpFlatKey = "hpFlat";
-	public static String attPercKey = "attPerc";
-	public static String attFlatKey = "attFlat";
-	public static String defPercKey = "defPerc";
-	public static String defFlatKey = "defFlat";
-	public static String critRateKey = "critRate";
-	public static String critDmgKey = "critDmg";
-	public static String accKey = "acc";
-	public static String resKey = "res";
-	public static String fillerKey = "x";
-	
-	public static String rareRarity = "rare";
-	public static String epicRarity = "epic";
-	public static String legendaryRarity = "legendary";
 	
 	private int slot;
 	private int stars;
 	private String rarity;
+	private String set;
 	private HashMap<String, String> stats;
 
 	public Rune(int slot, int stars, String rarity, HashMap<String, String> stats) {
@@ -37,6 +21,10 @@ public class Rune {
 
 	public Rune(JSONObject runeObject) {
 		//TODO: construct Rune from JsonObject
+		slot = runeObject.getInt("slot_no");
+		stars = runeObject.getInt("rank");
+		rarity = RuneInfo.rarityMap.get(runeObject.getInt("class"));
+		set = RuneInfo.setMap.get(runeObject.getInt("set_id"));
 	}
 
 	public int getStars() {
