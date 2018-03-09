@@ -24,13 +24,13 @@ public class RuneKeepOptionData {
 		addRuneKeepOption(7, 5, RuneInfo.legendaryRarity, new String[] { RuneInfo.speedKey, RuneInfo.fillerKey, RuneInfo.fillerKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.legendaryRarity, new String[] { RuneInfo.fillerKey, RuneInfo.fillerKey, RuneInfo.fillerKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.speedKey, RuneInfo.fillerKey, RuneInfo.fillerKey, RuneInfo.fillerKey });
-		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.attPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.fillerKey });
+		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.atkPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.defPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.hpPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.fillerKey });
 		addRuneKeepOption(7, 6, RuneInfo.epicRarity, new String[] { RuneInfo.defPercKey, RuneInfo.hpPercKey, RuneInfo.fillerKey });
-		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.speedKey, RuneInfo.hpPercKey, RuneInfo.defPercKey, RuneInfo.attPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.accKey, RuneInfo.resKey });
-		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.attPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey });
+		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.speedKey, RuneInfo.hpPercKey, RuneInfo.defPercKey, RuneInfo.atkPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey, RuneInfo.accKey, RuneInfo.resKey });
+		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.atkPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey });
 		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.defPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey });
 		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.hpPercKey, RuneInfo.critRateKey, RuneInfo.critDmgKey });
 		addRuneKeepOption(7, 6, RuneInfo.rareRarity, new String[] { RuneInfo.hpPercKey, RuneInfo.defPercKey });

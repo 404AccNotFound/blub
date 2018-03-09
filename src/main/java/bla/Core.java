@@ -1,5 +1,7 @@
 package bla;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,9 +9,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 public class Core {
 	
-	public static String directory = "files\\liveJson";
+	public static String directory = "files\\liveJson\\3774351-live-1518977887.json";
 
 	/*actions:
 	 * 	unequip_rune
@@ -25,6 +30,38 @@ public class Core {
 	public static void main(String[] args) throws IOException {
 		
 		RuneInfo.init();
+		
+		Core core = new Core();
+		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File(directory))));
+		JSONObject runeObject = object.getJSONObject("rune");
+		Rune rune = new Rune(runeObject);
+		System.out.println(rune.getRarity());
+		System.out.println(rune.getSlot());
+		System.out.println(rune.getStars());
+		System.out.println(rune.getSet());
+		System.out.println(rune.getPrimStat());
+		System.out.println(rune.getPrefixStat());
+		for(String s : rune.getSecondStats()) {
+			System.out.println(s);
+		}
+		
+		/*
+		 * 790
+		 * 1550
+		 * 2315
+		 * 3588
+		 * 5570
+		 * 8125
+		 * 11700
+		 * 17440
+		 * 27000
+		 * 37400
+		 * 53000
+		 * 79833
+		 * 133500
+		 * 185625
+		 * 327000+
+		 */
 //		
 //		Core core = new Core();
 //		ArrayList<String> list = core.watchOutForNewFile();
@@ -113,12 +150,13 @@ public class Core {
    */
 	
 	public boolean keepOrNotToKeep(Rune rune) {
+		//TODO: implement PrimaryStat
 		for (RuneKeepOption option : RuneKeepOption.runeKeepOptionsList) {
 			//preconditions
 			if (rune.getStars() == option.getStars() && rune.getSlot() == option.getSlot() && rune.getRarity().equals(option.getRarity())) {
 				int counter = 0;
 				//checking throug stats
-				for (String runeStat : rune.getStats().keySet()) {
+				for (String runeStat : rune.getSecondStats()) {
 					for (String optionStat : option.getOptions().keySet()) {
 						if ((runeStat.equals(optionStat) || optionStat.equals(RuneInfo.fillerKey)) && !option.getOptions().get(optionStat)) {
 							counter++;
@@ -127,7 +165,7 @@ public class Core {
 						}
 					}
 				}
-				if (counter == rune.getStats().size()) {
+				if (counter == rune.getSecondStats().size()) {
 					return true;
 				}
 			}
