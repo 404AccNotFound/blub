@@ -14,7 +14,7 @@ import org.json.JSONTokener;
 
 public class Core {
 	
-	public static String directory = "files\\liveJson\\3774351-live-1518977887.json";
+	public static String directory = "files\\liveJson";
 
 	/*actions:
 	 * 	unequip_rune
@@ -27,24 +27,32 @@ public class Core {
 		sell_craft
 	 */
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		RuneInfo.init();
-		
 		Core core = new Core();
-		JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File(directory))));
-		JSONObject runeObject = object.getJSONObject("rune");
-		Rune rune = new Rune(runeObject);
-		System.out.println(rune.getRarity());
-		System.out.println(rune.getSlot());
-		System.out.println(rune.getStars());
-		System.out.println(rune.getSet());
-		System.out.println(rune.getPrimStat());
-		System.out.println(rune.getPrefixStat());
-		for(String s : rune.getSecondStats()) {
-			System.out.println(s);
+		ArrayList <Path> jsonList = core.watchOutForNewFile();
+		while(true) {
+			ArrayList <Path> tempJsonList = core.watchOutForNewFile();
+			if(jsonList.hashCode() != tempJsonList.hashCode()) {
+				tempJsonList.removeAll(jsonList);
+				for(Path jsonPath : tempJsonList) {
+					JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File(jsonPath.toString()))));
+					if(object.has("rune")) {
+						//RUNE!!
+						JSONObject runeObject = object.getJSONObject("rune");
+						Rune rune = new Rune(runeObject);
+						if(core.keepOrNotToKeep(rune)) {
+							System.out.println("keep");
+						}else {
+							System.out.println("dontKeep");
+						}
+					}
+				}
+				jsonList.addAll(tempJsonList);
+			}
+            Thread.sleep(100);
 		}
-		
 		/*
 		 * 790
 		 * 1550
@@ -173,12 +181,12 @@ public class Core {
 		return false;
 	}
 	
-	public ArrayList<String> watchOutForNewFile () throws IOException {
-		ArrayList<String> list = new ArrayList<String>();
+	public ArrayList<Path> watchOutForNewFile () throws IOException {
+		ArrayList<Path> list = new ArrayList<Path>();
 		try (Stream<Path> paths = Files.walk(Paths.get(Core.directory))) {
 		    paths
 		        .filter(Files::isRegularFile)
-		        .forEach(item->list.add(item.toString()));
+		        .forEach(item->list.add(item));
 		} 
 		return list;
 	}
