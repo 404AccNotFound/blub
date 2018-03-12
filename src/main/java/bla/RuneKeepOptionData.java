@@ -57,6 +57,16 @@ public class RuneKeepOptionData {
 			RuneKeepOption.runeKeepOptionsList.add(runeOption);
 			runeOption = new RuneKeepOption(5, stars, rarity, optionMap);
 			RuneKeepOption.runeKeepOptionsList.add(runeOption);
+			
+			//DELETE!!!!
+			runeOption = new RuneKeepOption(2, stars, rarity, optionMap);
+			RuneKeepOption.runeKeepOptionsList.add(runeOption);
+			runeOption = new RuneKeepOption(4, stars, rarity, optionMap);
+			RuneKeepOption.runeKeepOptionsList.add(runeOption);
+			runeOption = new RuneKeepOption(6, stars, rarity, optionMap);
+			RuneKeepOption.runeKeepOptionsList.add(runeOption);
+			//DELETE!!!!
+			
 		}else {
 			RuneKeepOption runeOption = new RuneKeepOption(slot, stars, rarity, optionMap);
 			RuneKeepOption.runeKeepOptionsList.add(runeOption);

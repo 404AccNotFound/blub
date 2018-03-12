@@ -14,7 +14,7 @@ import org.json.JSONTokener;
 
 public class Core {
 	
-	public static String directory = "files\\liveJson";
+	public static String directory = "C:\\Users\\Nico\\Desktop\\Summoners War Exporter Files\\live";
 
 	/*actions:
 	 * 	unequip_rune
@@ -47,6 +47,8 @@ public class Core {
 						}else {
 							System.out.println("dontKeep");
 						}
+					}else {
+						System.out.println(object.get("action"));
 					}
 				}
 				jsonList.addAll(tempJsonList);
@@ -68,7 +70,7 @@ public class Core {
 		 * 79833
 		 * 133500
 		 * 185625
-		 * 327000+
+		 * 327000
 		 */
 //		
 //		Core core = new Core();
@@ -158,6 +160,8 @@ public class Core {
    */
 	
 	public boolean keepOrNotToKeep(Rune rune) {
+		//TODO: not working  3774351-live-1520893777
+		//Swift 6* spd cr res
 		//TODO: implement PrimaryStat
 		for (RuneKeepOption option : RuneKeepOption.runeKeepOptionsList) {
 			//preconditions
