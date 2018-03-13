@@ -29,32 +29,8 @@ public class Core {
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		RuneInfo.init();
-		Core core = new Core();
-		ArrayList <Path> jsonList = core.watchOutForNewFile();
-		while(true) {
-			ArrayList <Path> tempJsonList = core.watchOutForNewFile();
-			if(jsonList.hashCode() != tempJsonList.hashCode()) {
-				tempJsonList.removeAll(jsonList);
-				for(Path jsonPath : tempJsonList) {
-					JSONObject object = new JSONObject(new JSONTokener(new FileInputStream(new File(jsonPath.toString()))));
-					if(object.has("rune")) {
-						//RUNE!!
-						JSONObject runeObject = object.getJSONObject("rune");
-						Rune rune = new Rune(runeObject);
-						if(core.keepOrNotToKeep(rune)) {
-							System.out.println("keep");
-						}else {
-							System.out.println("dontKeep");
-						}
-					}else {
-						System.out.println(object.get("action"));
-					}
-				}
-				jsonList.addAll(tempJsonList);
-			}
-            Thread.sleep(100);
-		}
+		Gui gui = new Gui();
+		
 		/*
 		 * 790
 		 * 1550
@@ -160,8 +136,6 @@ public class Core {
    */
 	
 	public boolean keepOrNotToKeep(Rune rune) {
-		//TODO: not working  3774351-live-1520893777
-		//Swift 6* spd cr res
 		//TODO: implement PrimaryStat
 		for (RuneKeepOption option : RuneKeepOption.runeKeepOptionsList) {
 			//preconditions
